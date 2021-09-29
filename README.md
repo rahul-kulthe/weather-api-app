@@ -13,8 +13,11 @@ Install required libraries from **requirements.txt**
 	python run.py
 
 **Endpoint**: /weather?**city**=Bogota&**country**=co
+
 **Authentication**: Basic 
+
 **Credentials**: Provided in config file.
+
   
  **Unit test result:**
    

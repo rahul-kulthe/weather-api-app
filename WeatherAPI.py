@@ -4,7 +4,8 @@ import requests
 import logging
 from flask import Flask, g, request, jsonify
 from functools import wraps
-from flask_cache import Cache
+# from flask_cache import Cache
+from flask_caching import Cache
 from config import APIConfig
 
 app = Flask(__name__)
@@ -63,12 +64,12 @@ Params : City, Country
 Return : Weather data in json format.
 Keeping data cache for 2mins(120 seconds)
 """
-get_logger()
 @app.route("/weather", methods=["GET"])
 @protected
 ## Keeping data in Cache for 2 mins.
 @app.cache.cached(timeout=120)
 def get_weather():
+    get_logger()
     app.logger.info("GET /weather")
     try:
         city = request.args.get("city")

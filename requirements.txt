@@ -1,3 +1,4 @@
 flask
 flask_cache
 requests
+flask_caching
